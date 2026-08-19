@@ -1,125 +1,459 @@
+# Anshvith Ventures Corporate Landing Page
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anshvith Ventures</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 0; padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(135deg, #0a0a0a, #2c2c2c);
-      color: #fff;
-      padding: 40px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    nav {
-      background-color: #222;
-      padding: 12px;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 40px;
-      max-width: 1000px;
-      margin: auto;
-      background-color: #fff;
-      margin-top: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #1a1a1a;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 10px;
-    }
-    ul {
-      margin: 20px 0;
-    }
-    footer {
-      background-color: #111;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>Anshvith Ventures | Secure Enterprise AI Architecture & Integration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        enterprise: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            900: '#0f172a',
+                            DEFAULT: '#1e293b'
+                        }
+                    }
+
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-500 selection:text-white">
 
-<header>
-  <h1>Anshvith Ventures</h1>
-  <p>Private Venture Enterprise • Established 2026</p>
-</header>
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/90 border-b border-slate-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-600 p-2 rounded-lg shadow-md shadow-blue-500/20">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
+                <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-blue-400 bg-clip-text text-transparent">Anshvith Ventures</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#enterprise">Enterprise Focus</a>
-  <a href="#portfolio">Portfolio</a>
-  <a href="#contact">Contact</a>
-</nav>
+                <a href="#solutions" class="hover:text-blue-400 transition-colors">Solutions</a>
+                <a href="#security" class="hover:text-blue-400 transition-colors">Data Security</a>
+                <a href="#casestudy" class="hover:text-blue-400 transition-colors">Case Study</a>
+                <a href="#about" class="hover:text-blue-400 transition-colors">About Us</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Inquiries</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#solutions" class="block text-slate-300 hover:text-blue-400 text-base font-medium py-2">Solutions</a>
+            <a href="#security" class="block text-slate-300 hover:text-blue-400 text-base font-medium py-2">Data Security</a>
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>
-    Anshvith Ventures is a private venture enterprise established in 2026. 
-    Over the past two decades, the enterprise has been actively engaged in 
-    financial assets, IT business initiatives, and asset management under its helm. 
-    Founded by an IT/Tech veteran with 25+ years of experience at top‑tier 
-    multinational companies in Bengaluru since the early 2000s, Anshvith Ventures 
-    reflects continuity, resilience, and enterprise commitment.
-  </p>
-</section>
+            <a href="#casestudy" class="block text-slate-300 hover:text-blue-400 text-base font-medium py-2">Case Study</a>
+            <a href="#about" class="block text-slate-300 hover:text-blue-400 text-base font-medium py-2">About Us</a>
+            <a href="#contact" class="block text-slate-300 hover:text-blue-400 text-base font-medium py-2">Inquiries</a>
+        </div>
+    </header>
 
-<section id="enterprise">
-  <h2>Enterprise Purpose</h2>
-  <p>
-    This site is intended solely to reflect the ongoing enterprise activities 
-    of Anshvith Ventures. It is not a professional service platform, nor does it 
-    seek external investments or offer advisory services. The purpose is to 
-    demonstrate active engagement in managing family funds and enterprise assets.
-  </p>
-</section>
+    <!-- Hero Section -->
+    <section class="relative bg-slate-900 text-white overflow-hidden py-24 lg:py-32">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.12),transparent_45%)]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 px-3 py-1.5 rounded-full text-xs font-semibold text-blue-400 mb-6 tracking-wide uppercase">
+                    <span>Enterprise Security Architecture</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none mb-6">
+                    Sovereign AI Integration for Private Enterprise Data
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-400 mb-8 max-w-2xl leading-relaxed">
+                    We bridge the gap between generative intelligence and structural data isolation. Deploy custom open-source models and RAG assistants completely inside your physical or private cloud infrastructure.
 
-<section id="portfolio">
-  <h2>Key Holdings</h2>
-  <ul>
-    <li><strong>Private Equity Holdings:</strong> Fixed immovable asset properties valued at <strong>x+ crores</strong>.</li>
-    <li><strong>Equity Stocks:</strong> Diversified holdings worth <strong>** lakhs</strong>.</li>
-    <li><strong>Mutual Funds:</strong> Balanced investments across categories worth <strong>** lakhs</strong>.</li>
-    <li><strong>Fixed Assets:</strong> Long‑term capital assets valued at <strong>** lakhs</strong>.</li>
-  </ul>
-  <p>
-    These holdings represent the enterprise’s commitment to disciplined asset 
-    management and long‑term value creation.
-  </p>
-</section>
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="inline-flex items-center justify-center px-6 py-3.5 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/20 transition-all transform hover:-translate-y-0.5">
+                        Request System Architecture Review
+                    </a>
+                    <a href="#solutions" class="inline-flex items-center justify-center px-6 py-3.5 border border-slate-700 text-base font-medium rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">
+                        Explore Capabilities
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    This site is a professional presence for enterprise purposes only. No commercial services are provided. 
-    For networking or general inquiries, please connect via LinkedIn or email info@anshvithventures.com
-  </p>
-</section>
+    <!-- Solutions Capabilities Matrix -->
+    <section id="solutions" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-4">
+                    Our Core Integration Matrix
 
-<footer>
-  <p>&copy; 2026 Anshvith Ventures. Enterprise presence only. All rights reserved.</p>
-</footer>
+                </h2>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Eliminate dependencies on third-party public cloud endpoints. We systematically build end-to-end local systems designed to optimize operational intelligence securely.
+                </p>
+            </div>
 
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Competency 1 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:border-blue-500/10 transition-all duration-300">
+                    <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Legacy Data Modernization</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Transform scattered physical paper documents, unindexed local storage arrays, desktop silos, and isolated mobile records into operational intelligence. We eliminate resource waste and protect your revenue from search-related bottlenecks.
+                    </p>
+                </div>
+
+
+                <!-- Competency 2 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:border-blue-500/10 transition-all duration-300">
+                    <div class="bg-emerald-100 text-emerald-600 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 001 1h6a2 2 0 100-4h-3.33a2 2 0 00-1.86 1.26L15.42 11H13v2h2.42l1.39 4.16a2 2 0 001.86 1.26H22a2 2 0 100-4h-3a1 1 0 00-1-1v-3a1 1 0 00-1-1h-3a1 1 0 00-1-1V4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Open-Source LLM Architecture</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Transition client management and operational intelligence onto localized open-source foundational models. Fine-tuned and quantified parameters optimized for standard edge hardware arrays.
+                    </p>
+                </div>
+
+                <!-- Competency 3 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:border-blue-500/10 transition-all duration-300">
+                    <div class="bg-indigo-100 text-indigo-600 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">In-House RAG Pipelines</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Retrieval-Augmented Generation mapped perfectly onto secure object storage arrays (Amazon S3, Azure Blob, or local network file systems). Retrieve exact real-time corporate insight deterministically.
+                    </p>
+                </div>
+
+                <!-- Competency 4 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:border-blue-500/10 transition-all duration-300">
+                    <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Autonomous Workflows</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Design multi-agent task execution protocols. Our systems connect raw multi-format inputs with discrete local orchestration loops to automatically handle structural processes with minimal intervention.
+                    </p>
+                </div>
+
+
+                <!-- Competency 5 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:border-blue-500/10 transition-all duration-300 md:col-span-2 lg:col-span-2">
+                    <div class="bg-amber-100 text-amber-600 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Data Security Provisioning</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We safeguard confidential intellectual property using client-side encryption layers and isolated routing loops. Even when using commercial storage endpoints, data remains mathematically inaccessible to third-party providers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Security Deep Dive Section -->
+    <section id="security" class="py-20 lg:py-24 bg-slate-900 text-white relative">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.08),transparent_40%)]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight mb-6 sm:text-4xl">
+                        Zero-Knowledge Architecture Protection
+                    </h2>
+                    <p class="text-slate-400 mb-6 leading-relaxed">
+                        Enterprises routinely stall AI adoption due to vendor data-leakage fears. Our fundamental deployment paradigm ensures your private intellectual capital stays under lock and key.
+                    </p>
+                    <ul class="space-y-4 text-sm text-slate-300">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span><strong>No Model Scraping:</strong> Private inputs are shielded from training matrices.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span><strong>Client-Side Isolation:</strong> Encrypted localized partitioning blocks cross-tenant leaks.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span><strong>Ephemeral Computation:</strong> Chunks are tokenized inside local volatile memory layers and dropped instantly.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-8 shadow-xl">
+                    <h4 class="text-lg font-bold mb-4 text-blue-400 font-mono text-xs uppercase tracking-wider">Secure Chunking Pipeline Validation</h4>
+                    <div class="space-y-3 font-mono text-xs text-slate-400">
+                        <p class="text-emerald-400">[INFO] Initializing localized chunking process...</p>
+                        <p>[STAGE 1] Handshake initiated with isolated Client Bucket.</p>
+                        <p>[STAGE 2] Streaming document byte array into memory sandbox.</p>
+                        <p>[STAGE 3] Text extraction running: processing multi-page structures.</p>
+                        <p>[STAGE 4] Executing regex-based boundary chunk tokenization.</p>
+                        <p class="text-blue-400">[VECTORS] Mapping chunks directly into discrete customer vector namespaces.</p>
+                        <p class="text-emerald-400">[SUCCESS] Purging raw disk data buffers. Verification complete.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Case Study Section -->
+    <section id="casestudy" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-2">Proven Performance</span>
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-4">
+                    Case Study: Legacy Data Modernization
+                </h2>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    See how we unified unstructured file chaos into a private knowledge matrix for a traditional logistics and manufacturing enterprise.
+                </p>
+            </div>
+
+            <!-- Case Study Dashboard Card -->
+            <div class="bg-slate-900 rounded-3xl text-white overflow-hidden shadow-2xl border border-slate-800">
+                <div class="p-8 lg:p-12 border-b border-slate-800 bg-slate-950/40">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
+
+                        <div class="border-b sm:border-b-0 sm:border-r border-slate-800 pb-6 sm:pb-0 sm:pr-6">
+                            <span class="text-slate-500 uppercase tracking-wider text-xs font-mono">Client Profile</span>
+                            <p class="text-base font-semibold mt-1 text-slate-200">Traditional Logistics & Manufacturing Firm</p>
+                        </div>
+                        <div class="border-b sm:border-b-0 sm:border-r border-slate-800 pb-6 sm:pb-0 sm:pr-6">
+                            <span class="text-slate-500 uppercase tracking-wider text-xs font-mono">Core Challenge</span>
+                            <p class="text-base font-semibold mt-1 text-slate-200">Scattered paper files, desktop silos, revenue degradation</p>
+                        </div>
+                        <div>
+                            <span class="text-slate-500 uppercase tracking-wider text-xs font-mono">The Outcome</span>
+                            <p class="text-base font-semibold mt-1 text-emerald-400">92% faster information retrieval, 100% data sovereignty</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Left Side: Problem & Strategy -->
+                    <div class="lg:col-span-7 space-y-8">
+                        <div>
+
+                            <h3 class="text-xl font-bold text-white mb-3 flex items-center space-x-2">
+                                <span class="w-1.5 h-6 bg-red-500 rounded-full"></span>
+                                <span>The Obstacle: Fractured Information Silos</span>
+                            </h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                The client managed over a decade of equipment manifests, custom compliance frameworks, and legacy customer agreements. Important intelligence lay trapped in physical filing cabinets, unindexed folder paths across separate local office laptops, and disorganized mobile communication histories. Employees spent an average of 45 minutes manually searching for parameters during customer audits, degrading fast operations and eroding revenue.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-3 flex items-center space-x-2">
+                                <span class="w-1.5 h-6 bg-blue-500 rounded-full"></span>
+                                <span>The Strategy: Zero-Knowledge Rescue Architecture</span>
+                            </h3>
+                            <div class="space-y-4 text-slate-400 text-sm">
+                                <p>
+                                    Anshvith Ventures engineered an automated migration pipeline to ingest and secure these unstructured corporate assets cleanly:
+                                </p>
+                                <ul class="space-y-3 pl-2">
+
+                                    <li class="flex items-start space-x-2">
+                                        <svg class="w-4 h-4 text-blue-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                        <span><b>Digitization Layer:</b> Transformed paper sheets into structured texts utilizing machine-managed localized OCR formatting.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <svg class="w-4 h-4 text-blue-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                        <span><b>Isolated Vaulting:</b> Loaded encrypted data files into an isolated S3 storage array running unique server-side cryptographic keys.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <svg class="w-4 h-4 text-blue-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                        <span><b>Semantic Context Mapping:</b> Segmented texts into vector coordinates partitioned strictly inside unique customer vector spaces.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Interface & ROI -->
+                    <div class="lg:col-span-5 space-y-6">
+
+                        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6">
+                            <h4 class="text-xs uppercase font-mono text-slate-500 tracking-wider mb-4">Sovereign RAG Search Simulation</h4>
+                            <div class="space-y-4">
+                                <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs">
+                                    <span class="text-blue-400 font-mono block mb-1">User Query:</span>
+                                    <p class="text-slate-300 font-medium">"What are the delayed delivery penalty clauses under our 2022 agreement with Supplier X?"</p>
+                                </div>
+                                <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs">
+                                    <span class="text-emerald-400 font-mono block mb-1">System Response [Private Engine]:</span>
+                                    <p class="text-slate-300 mb-2">Section 4.2 states delayed arrivals over 48 hours incur a 1.5% margin reduction per day.</p>
+                                    <a href="#" onclick="event.preventDefault();" class="text-blue-500 hover:underline font-mono text-[10px] block flex items-center space-x-1">
+                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                        <span>Source: 2022_Sourcing_Agreement_Final.pdf (Page 14)</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700/50 rounded-2xl p-6">
+
+                            <h4 class="text-xs uppercase font-mono text-slate-400 tracking-wider mb-3">Validated Business Outcomes</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between text-sm py-1 border-b border-slate-800">
+                                    <span class="text-slate-400">Search Latency Target</span>
+                                    <span class="font-mono text-red-400">45 Min <span class="text-slate-500">→</span> <span class="text-emerald-400">&lt; 5 Sec</span></span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm py-1 border-b border-slate-800">
+                                    <span class="text-slate-400">Weekly Saved Labor</span>
+                                    <span class="font-mono text-emerald-400">120 Hours</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm py-1">
+                                    <span class="text-slate-400">Third-Party Data Leaks</span>
+                                    <span class="font-mono text-emerald-400">Absolute Zero</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Stealth About Us Section -->
+    <section id="about" class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white border border-slate-200/60 rounded-3xl p-10 lg:p-16 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-0 opacity-60"></div>
+                <div class="relative z-10">
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-3">Our Core Philosophy</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-6 sm:text-4xl">
+                        About Anshvith Ventures
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed mb-6">
+                        We operate as a specialized engineering group dedicated entirely to building secure, autonomous AI foundations for corporate entities. While public platforms offer great agility, enterprise deployments demand complete protection over structural assets, strict local storage alignment, and absolute control of data pipelines.
+                    </p>
+                    <p class="text-slate-600 text-base leading-relaxed mb-8">
+                        Our primary commitment is infrastructure excellence. Rather than packaging generalized wrappers, we build direct plumbing architecture that safely encapsulates complex open-source infrastructure inside your secure borders. We prioritize system metrics, absolute data isolation, and verified code security above marketing amplification.
+                    </p>
+
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-100 text-center sm:text-left">
+                        <div>
+                            <div class="text-2xl font-bold text-slate-900">100%</div>
+                            <div class="text-xs text-slate-500 uppercase font-semibold mt-1 tracking-wider">Data Control Retention</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-slate-900">Zero</div>
+                            <div class="text-xs text-slate-500 uppercase font-semibold mt-1 tracking-wider">External API Vendor Reliance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-slate-900">Custom Built</div>
+                            <div class="text-xs text-slate-500 uppercase font-semibold mt-1 tracking-wider">Local Vector Isolation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Secure Inquiries Intake -->
+    <section id="contact" class="py-20 lg:py-24 bg-white border-t border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 tracking-tight sm:text-4xl mb-3">
+                    Initiate Technical Engagement
+                </h2>
+                <p class="text-base text-slate-600 max-w-xl mx-auto mb-4">
+                    Submit your enterprise specifications to evaluate feasibility. All incoming inquiries are routed directly over encrypted communication channels.
+                </p>
+                <div class="inline-flex items-center space-x-2 bg-slate-100 px-4 py-2 rounded-full border border-slate-200">
+                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L22 8m-2 11H4a2 2 0 01-2-2V8a2 2 0 012-2h16a2 2 0 012 2v9a2 2 0 01-2 2z"></path></svg>
+                    <a href="mailto:info@anshvithventures.com" class="text-sm font-mono text-blue-600 hover:underline">info@anshvithventures.com</a>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-8 sm:p-12 shadow-sm">
+                <form onsubmit="event.preventDefault(); alert('Transmission simulated successfully. Your configuration has been validated internally.');" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Corporate Entity</label>
+                            <input type="text" required placeholder="e.g., Global Logistics Corp" class="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Primary Infrastructure Engine</label>
+                            <select class="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                                <option>Amazon Web Services (AWS S3 / VPC)</option>
+                                <option>Google Cloud Platform (GCS)</option>
+                                <option>Microsoft Azure Cloud</option>
+                                <option>On-Premises Dedicated Arrays</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Target Data Context Profile</label>
+                        <textarea rows="4" required placeholder="Describe target data systems, document counts, and compliance expectations (e.g., Unstructured PDF volumes, localized codebases, fine-tuning configurations)." class="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"></textarea>
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 pt-2">
+
+                        <span class="text-xs text-slate-400 font-mono">Endpoint Security: Layered Transport Layer Encryption</span>
+                        <button type="submit" class="px-6 py-3 bg-slate-900 text-white hover:bg-slate-800 text-sm font-semibold rounded-lg shadow transition-all transform hover:-translate-y-0.5 w-full sm:w-auto">
+                            Submit Architecture Parameters
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Block -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-sm border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+            <p>&copy; 2026 Anshvith Ventures. Infrastructure Rights Reserved.</p>
+            <div class="flex space-x-6 text-slate-500 text-xs font-mono">
+                <span>Domain: anshvithventures.com</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Mobile Navigation Toggle Script -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
+
+
