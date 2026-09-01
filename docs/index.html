@@ -1,468 +1,330 @@
-# Anshvith Ventures Corporate Landing Page
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=2.0">
-    <title>Anshvith Ventures | Secure Enterprise AI Architecture & Integration</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        enterprise: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
-                            900: '#0f172a',
-                            DEFAULT: '#1e293b'
-                        }
-                    }
-
-                }
-            }
-        }
-    </script> 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY85MLJWV4"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-XY85MLJWV4');
-    </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anshvith Ventures | Invoice Intelligence</title>
+  <meta name="description" content="Invoice Intelligence for Business Enterprises — a demonstrable Proof of Concept by Anshvith Ventures for invoice queries on a local knowledge base, with a roadmap toward bulk processing, agentic workflows and analytics." />
+  <style>
+    :root{
+      --navy:#082d61;
+      --navy2:#0d3f80;
+      --blue:#2563eb;
+      --cyan:#0ea5e9;
+      --green:#0f9f6e;
+      --orange:#f59e0b;
+      --purple:#7c3aed;
+      --ink:#0f172a;
+      --muted:#5b6472;
+      --line:#d9e3ef;
+      --soft:#f6f9fd;
+      --card:#ffffff;
+      --danger:#b42318;
+      --danger-bg:#fff4f2;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:#fff;
+      line-height:1.55;
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:1200px;margin:auto;padding:0 22px}
+    header{
+      position:sticky;top:0;z-index:10;
+      background:linear-gradient(90deg,#062a5b,#0b3c79);
+      color:#fff;
+      box-shadow:0 4px 18px rgba(8,45,97,.18);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:72px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .logo{
+      width:44px;height:44px;border-radius:12px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,#38bdf8,#2563eb 55%,#7c3aed);
+      color:white;font-size:24px;font-weight:900;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);
+    }
+    .brand small{display:block;font-size:11px;font-weight:500;opacity:.8;margin-top:1px}
+    nav{display:flex;gap:22px;font-size:13px;font-weight:700}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 18px;border-radius:10px;font-weight:800;
+      border:1px solid transparent;cursor:pointer;
+    }
+    .btn-primary{background:#1473e6;color:white;box-shadow:0 8px 22px rgba(20,115,230,.24)}
+    .btn-light{background:white;border-color:#cbd8e8;color:var(--navy)}
+    .hero{
+      background:
+        radial-gradient(circle at 75% 15%,rgba(99,102,241,.16),transparent 30%),
+        linear-gradient(180deg,#f8fbff,#fff);
+      padding:64px 0 50px;
+    }
+    .hero-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:42px;align-items:start}
+    h1{font-size:56px;line-height:1.05;margin:0 0 18px;letter-spacing:-1.5px}
+    .accent{color:var(--blue)}
+    .lead{font-size:21px;font-weight:800;margin:0 0 18px}
+    .sub{font-size:17px;color:var(--muted);max-width:580px}
+    .feature-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px}
+    .mini{
+      background:#fff;border:1px solid #e4ebf4;border-radius:14px;padding:16px;
+      box-shadow:0 8px 25px rgba(15,23,42,.05);
+    }
+    .mini b{display:block;font-size:13px;margin:8px 0 4px}
+    .mini span{font-size:12px;color:var(--muted)}
+    .icon{
+      width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
+      font-size:20px;background:#eef5ff;
+    }
+    .poc-card{
+      border:1px solid #9ab6dc;border-radius:14px;overflow:hidden;background:#fff;
+      box-shadow:0 14px 35px rgba(15,23,42,.08);
+    }
+    .poc-head{background:var(--navy2);color:#fff;text-align:center;font-weight:900;padding:10px 14px}
+    .poc-card img{width:100%;display:block;object-fit:cover}
+    .disclaimer{
+      margin-top:14px;padding:14px 16px;border:1px dashed #ef6b61;border-radius:10px;
+      background:var(--danger-bg);font-size:13px;color:#57221c;
+    }
+    .disclaimer strong{color:var(--danger)}
+    section{padding:60px 0}
+    .section-title{text-align:center;font-size:34px;margin:0 0 8px;color:var(--navy)}
+    .section-sub{text-align:center;color:var(--muted);margin:0 auto 34px;max-width:760px}
+    .workflow{
+      display:grid;grid-template-columns:repeat(8,1fr);gap:12px;align-items:stretch
+    }
+    .step{
+      text-align:center;border:1px solid #cfe0f6;border-radius:14px;padding:18px 10px;background:#fff;
+      position:relative;
+    }
+    .step:after{
+      content:"→";position:absolute;right:-13px;top:40%;color:#6e8cc4;font-weight:900
+    }
+    .step:last-child:after{display:none}
+    .step .bubble{
+      width:54px;height:54px;border-radius:14px;margin:0 auto 12px;display:grid;place-items:center;
+      background:#eef5ff;font-size:26px;
+    }
+    .step b{font-size:12px;display:block;margin-bottom:6px}
+    .step span{font-size:11px;color:var(--muted)}
+    .roadmap-wrap{background:var(--soft)}
+    .roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .phase{
+      background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;
+      box-shadow:0 8px 20px rgba(15,23,42,.04)
+    }
+    .phase .tag{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.8px}
+    .phase h3{margin:8px 0 4px;color:var(--navy)}
+    .phase small{color:var(--muted)}
+    .phase ul{padding-left:18px;margin:18px 0 0;color:#344054;font-size:14px}
+    .phase li{margin:7px 0}
+    .benefits-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+    .benefit-card,.amount-card{
+      border:1px solid var(--line);border-radius:16px;background:#fff;padding:24px;
+    }
+    .benefit-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .benefit{display:flex;gap:10px;align-items:flex-start}
+    .check{color:#0f9f6e;font-weight:900}
+    .amount-card h3{margin-top:0;color:var(--navy)}
+    .amount{font-size:30px;font-weight:900;color:var(--navy)}
+    .cta{
+      background:linear-gradient(90deg,#052a5d,#0d4386);
+      color:#fff;padding:42px 0;
+    }
+    .cta-grid{display:flex;justify-content:space-between;gap:24px;align-items:center}
+    .cta h2{margin:0 0 8px;font-size:28px}
+    .contact{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
+    footer{background:#041d3d;color:#a8bedc;text-align:center;padding:16px;font-size:12px}
+    .note{
+      margin-top:30px;padding:16px 18px;background:#eef7ff;border-left:4px solid var(--blue);
+      border-radius:8px;color:#334155;font-size:14px;
+    }
+    @media(max-width:960px){
+      .hero-grid,.benefits-grid{grid-template-columns:1fr}
+      .feature-row{grid-template-columns:repeat(2,1fr)}
+      .workflow{grid-template-columns:repeat(2,1fr)}
+      .step:after{display:none}
+      .roadmap{grid-template-columns:repeat(2,1fr)}
+      nav{display:none}
+      h1{font-size:44px}
+    }
+    @media(max-width:640px){
+      h1{font-size:36px}
+      .feature-row,.roadmap,.workflow,.benefit-list{grid-template-columns:1fr}
+      .cta-grid{align-items:flex-start;flex-direction:column}
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-500 selection:text-white">
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo">A</div>
+      <div>ANSHVITH VENTURES<small>Intelligence. Automation. Impact.</small></div>
+    </div>
+    <nav>
+      <a href="#product">PRODUCT</a>
+      <a href="#workflow">WORKFLOW</a>
+      <a href="#roadmap">ROADMAP</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+    <a class="btn btn-primary" href="mailto:info@anshvithventures.com?subject=Invoice%20Intelligence%20Demo%20Request">REQUEST DEMO</a>
+  </div>
+</header>
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/90 border-b border-slate-800 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="bg-blue-600 p-2 rounded-lg shadow-md shadow-blue-500/20">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                    </svg>
-                </div>
-                <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-blue-400 bg-clip-text text-transparent">Anshvith Ventures</span>
-            </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+<main>
+  <section class="hero" id="product">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>INVOICE INTELLIGENCE<br><span class="accent">FOR BUSINESS ENTERPRISES</span></h1>
+        <p class="lead">AI-Powered. Agentic Workflows. Actionable Analytics.</p>
+        <p class="sub">
+          Transform invoice-heavy operations into intelligent workflows.
+          Our current demonstrable POC focuses on English-language invoice queries
+          over a local knowledge base, with a roadmap toward bulk processing,
+          lifecycle management, analytics and enterprise integration.
+        </p>
 
-                <a href="#solutions" class="hover:text-blue-400 transition-colors">Solutions</a>
-                <a href="#security" class="hover:text-blue-400 transition-colors">Data Security</a>
-                <a href="#casestudy" class="hover:text-blue-400 transition-colors">Case Study</a>
-                <a href="#about" class="hover:text-blue-400 transition-colors">About Us</a>
-                <a href="#contact" class="hover:text-blue-400 transition-colors">Inquiries</a>
-            </nav>
-            <div class="md:hidden">
-                <button id="menu-btn" class="text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle Menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+        <div class="feature-row">
+          <div class="mini"><div class="icon">📄</div><b>Bulk Processing</b><span>Roadmap capability for high-volume invoice handling.</span></div>
+          <div class="mini"><div class="icon">🎯</div><b>Structured Accuracy</b><span>Metadata extraction, validation and business rules.</span></div>
+          <div class="mini"><div class="icon">🤖</div><b>Agentic Workflows</b><span>Tool-based actions, routing, decisions and fallbacks.</span></div>
+          <div class="mini"><div class="icon">📊</div><b>Data Analytics</b><span>Planned dashboards, trends, ageing and alerts.</span></div>
         </div>
-        
-        <!-- Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
-            <a href="#solutions" class="block text-slate-300 hover:text-blue-400 text-base font-medium py-2">Solutions</a>
-            <a href="#security" class="block text-slate-300 hover:text-blue-400 text-base font-medium py-2">Data Security</a>
+      </div>
 
-            <a href="#casestudy" class="block text-slate-300 hover:text-blue-400 text-base font-medium py-2">Case Study</a>
-            <a href="#about" class="block text-slate-300 hover:text-blue-400 text-base font-medium py-2">About Us</a>
-            <a href="#contact" class="block text-slate-300 hover:text-blue-400 text-base font-medium py-2">Inquiries</a>
+      <div>
+        <div class="poc-card">
+          <div class="poc-head">DEMONSTRABLE POC — INVOICE QUERIES ON LOCAL DATABASE</div>
+          <img src="images/sample-query-output.png" alt="Sample invoice query output from the Enterprise Assistant">
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="relative bg-slate-900 text-white overflow-hidden py-24 lg:py-32">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.12),transparent_45%)]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 px-3 py-1.5 rounded-full text-xs font-semibold text-blue-400 mb-6 tracking-wide uppercase">
-                    <span>Enterprise Security Architecture</span>
-                </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none mb-6">
-                    Sovereign AI Integration for Private Enterprise Data
-                </h1>
-                <p class="text-lg sm:text-xl text-slate-400 mb-8 max-w-2xl leading-relaxed">
-                    We bridge the gap between generative intelligence and structural data isolation. Deploy custom open-source models and RAG assistants completely inside your physical or private cloud infrastructure.
-
-                </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="inline-flex items-center justify-center px-6 py-3.5 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/20 transition-all transform hover:-translate-y-0.5">
-                        Request System Architecture Review
-                    </a>
-                    <a href="#solutions" class="inline-flex items-center justify-center px-6 py-3.5 border border-slate-700 text-base font-medium rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">
-                        Explore Capabilities
-                    </a>
-                </div>
-            </div>
+        <div class="disclaimer">
+          <strong>DISCLAIMER — CURRENT POC:</strong>
+          The demonstrable capability is currently limited to English-language invoice queries
+          on a local database / knowledge base. Bulk invoice processing, lifecycle management,
+          analytics dashboards, alerts, approvals, multi-language support and ERP integrations
+          are future product-roadmap capabilities and are not represented as completed production features.
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Solutions Capabilities Matrix -->
-    <section id="solutions" class="py-20 lg:py-28 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-4">
-                    Our Core Integration Matrix
+  <section id="workflow">
+    <div class="wrap">
+      <h2 class="section-title">Agentic AI Workflow</h2>
+      <p class="section-sub">A future-ready flow from invoice ingestion to enterprise insight and action.</p>
+      <div class="workflow">
+        <div class="step"><div class="bubble">📥</div><b>1. INGEST</b><span>PDF / Excel / Word / Email</span></div>
+        <div class="step"><div class="bubble">🧠</div><b>2. EXTRACT</b><span>Read fields and normalize metadata</span></div>
+        <div class="step"><div class="bubble">✅</div><b>3. VALIDATE</b><span>Business rules and cross-checks</span></div>
+        <div class="step"><div class="bubble">🤖</div><b>4. ACT</b><span>Routing, approvals and tool actions</span></div>
+        <div class="step"><div class="bubble">🗄️</div><b>5. STORE</b><span>Structured and persistent data</span></div>
+        <div class="step"><div class="bubble">📈</div><b>6. ANALYZE</b><span>Trends, ageing and dashboards</span></div>
+        <div class="step"><div class="bubble">🔔</div><b>7. NOTIFY</b><span>Overdue and exception alerts</span></div>
+        <div class="step"><div class="bubble">🔗</div><b>8. INTEGRATE</b><span>ERP / accounting / third-party APIs</span></div>
+      </div>
+      <div class="note">
+        Current POC scope is deliberately narrower: secure invoice query and retrieval from a local knowledge base.
+        The broader workflow above illustrates the intended product evolution.
+      </div>
+    </div>
+  </section>
 
-                </h2>
-                <p class="text-lg text-slate-600 leading-relaxed">
-                    Eliminate dependencies on third-party public cloud endpoints. We systematically build end-to-end local systems designed to optimize operational intelligence securely.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Competency 1 -->
-                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:border-blue-500/10 transition-all duration-300">
-                    <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Legacy Data Modernization</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Transform scattered physical paper documents, unindexed local storage arrays, desktop silos, and isolated mobile records into operational intelligence. We eliminate resource waste and protect your revenue from search-related bottlenecks.
-                    </p>
-                </div>
-
-
-                <!-- Competency 2 -->
-                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:border-blue-500/10 transition-all duration-300">
-                    <div class="bg-emerald-100 text-emerald-600 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 001 1h6a2 2 0 100-4h-3.33a2 2 0 00-1.86 1.26L15.42 11H13v2h2.42l1.39 4.16a2 2 0 001.86 1.26H22a2 2 0 100-4h-3a1 1 0 00-1-1v-3a1 1 0 00-1-1h-3a1 1 0 00-1-1V4z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Open-Source LLM Architecture</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Transition client management and operational intelligence onto localized open-source foundational models. Fine-tuned and quantified parameters optimized for standard edge hardware arrays.
-                    </p>
-                </div>
-
-                <!-- Competency 3 -->
-                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:border-blue-500/10 transition-all duration-300">
-                    <div class="bg-indigo-100 text-indigo-600 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                        </svg>
-
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">In-House RAG Pipelines</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Retrieval-Augmented Generation mapped perfectly onto secure object storage arrays (Amazon S3, Azure Blob, or local network file systems). Retrieve exact real-time corporate insight deterministically.
-                    </p>
-                </div>
-
-                <!-- Competency 4 -->
-                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:border-blue-500/10 transition-all duration-300">
-                    <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Autonomous Workflows</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Design multi-agent task execution protocols. Our systems connect raw multi-format inputs with discrete local orchestration loops to automatically handle structural processes with minimal intervention.
-                    </p>
-                </div>
-
-
-                <!-- Competency 5 -->
-                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:border-blue-500/10 transition-all duration-300 md:col-span-2 lg:col-span-2">
-                    <div class="bg-amber-100 text-amber-600 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Data Security Provisioning</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        We safeguard confidential intellectual property using client-side encryption layers and isolated routing loops. Even when using commercial storage endpoints, data remains mathematically inaccessible to third-party providers.
-                    </p>
-                </div>
-            </div>
+  <section class="roadmap-wrap" id="roadmap">
+    <div class="wrap">
+      <h2 class="section-title">Product Evolution Roadmap</h2>
+      <p class="section-sub">We invite early customers and partners to help shape priorities and use cases together.</p>
+      <div class="roadmap">
+        <div class="phase">
+          <div class="tag" style="color:#2563eb">Phase 1</div>
+          <h3>Foundation</h3><small>Current / Early POC</small>
+          <ul>
+            <li>English invoice queries</li>
+            <li>Local knowledge base</li>
+            <li>RAG retrieval and metadata extraction</li>
+            <li>Role-based access foundation</li>
+            <li>Auditability concepts</li>
+          </ul>
         </div>
-    </section>
-
-    <!-- Data Security Deep Dive Section -->
-    <section id="security" class="py-20 lg:py-24 bg-slate-900 text-white relative">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.08),transparent_40%)]"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold tracking-tight mb-6 sm:text-4xl">
-                        Zero-Knowledge Architecture Protection
-                    </h2>
-                    <p class="text-slate-400 mb-6 leading-relaxed">
-                        Enterprises routinely stall AI adoption due to vendor data-leakage fears. Our fundamental deployment paradigm ensures your private intellectual capital stays under lock and key.
-                    </p>
-                    <ul class="space-y-4 text-sm text-slate-300">
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span><strong>No Model Scraping:</strong> Private inputs are shielded from training matrices.</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span><strong>Client-Side Isolation:</strong> Encrypted localized partitioning blocks cross-tenant leaks.</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-
-                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span><strong>Ephemeral Computation:</strong> Chunks are tokenized inside local volatile memory layers and dropped instantly.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-8 shadow-xl">
-                    <h4 class="text-lg font-bold mb-4 text-blue-400 font-mono text-xs uppercase tracking-wider">Secure Chunking Pipeline Validation</h4>
-                    <div class="space-y-3 font-mono text-xs text-slate-400">
-                        <p class="text-emerald-400">[INFO] Initializing localized chunking process...</p>
-                        <p>[STAGE 1] Handshake initiated with isolated Client Bucket.</p>
-                        <p>[STAGE 2] Streaming document byte array into memory sandbox.</p>
-                        <p>[STAGE 3] Text extraction running: processing multi-page structures.</p>
-                        <p>[STAGE 4] Executing regex-based boundary chunk tokenization.</p>
-                        <p class="text-blue-400">[VECTORS] Mapping chunks directly into discrete customer vector namespaces.</p>
-                        <p class="text-emerald-400">[SUCCESS] Purging raw disk data buffers. Verification complete.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="phase">
+          <div class="tag" style="color:#0f9f6e">Phase 2</div>
+          <h3>Intelligence</h3><small>Future roadmap</small>
+          <ul>
+            <li>Bulk PDF / XLS / DOC ingestion</li>
+            <li>Canonical invoice metadata</li>
+            <li>Persistent database</li>
+            <li>Duplicate detection</li>
+            <li>Dashboard and notifications</li>
+          </ul>
         </div>
-
-    </section>
-
-    <!-- Case Study Section -->
-    <section id="casestudy" class="py-20 lg:py-28 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-2">Proven Performance</span>
-                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-4">
-                    Case Study: Legacy Data Modernization
-                </h2>
-                <p class="text-lg text-slate-600 leading-relaxed">
-                    See how we unified unstructured file chaos into a private knowledge matrix for a traditional logistics and manufacturing enterprise.
-                </p>
-            </div>
-
-            <!-- Case Study Dashboard Card -->
-            <div class="bg-slate-900 rounded-3xl text-white overflow-hidden shadow-2xl border border-slate-800">
-                <div class="p-8 lg:p-12 border-b border-slate-800 bg-slate-950/40">
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
-
-                        <div class="border-b sm:border-b-0 sm:border-r border-slate-800 pb-6 sm:pb-0 sm:pr-6">
-                            <span class="text-slate-500 uppercase tracking-wider text-xs font-mono">Client Profile</span>
-                            <p class="text-base font-semibold mt-1 text-slate-200">Traditional Logistics & Manufacturing Firm</p>
-                        </div>
-                        <div class="border-b sm:border-b-0 sm:border-r border-slate-800 pb-6 sm:pb-0 sm:pr-6">
-                            <span class="text-slate-500 uppercase tracking-wider text-xs font-mono">Core Challenge</span>
-                            <p class="text-base font-semibold mt-1 text-slate-200">Scattered paper files, desktop silos, revenue degradation</p>
-                        </div>
-                        <div>
-                            <span class="text-slate-500 uppercase tracking-wider text-xs font-mono">The Outcome</span>
-                            <p class="text-base font-semibold mt-1 text-emerald-400">92% faster information retrieval, 100% data sovereignty</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    <!-- Left Side: Problem & Strategy -->
-                    <div class="lg:col-span-7 space-y-8">
-                        <div>
-
-                            <h3 class="text-xl font-bold text-white mb-3 flex items-center space-x-2">
-                                <span class="w-1.5 h-6 bg-red-500 rounded-full"></span>
-                                <span>The Obstacle: Fractured Information Silos</span>
-                            </h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                The client managed over a decade of equipment manifests, custom compliance frameworks, and legacy customer agreements. Important intelligence lay trapped in physical filing cabinets, unindexed folder paths across separate local office laptops, and disorganized mobile communication histories. Employees spent an average of 45 minutes manually searching for parameters during customer audits, degrading fast operations and eroding revenue.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-3 flex items-center space-x-2">
-                                <span class="w-1.5 h-6 bg-blue-500 rounded-full"></span>
-                                <span>The Strategy: Zero-Knowledge Rescue Architecture</span>
-                            </h3>
-                            <div class="space-y-4 text-slate-400 text-sm">
-                                <p>
-                                    Anshvith Ventures engineered an automated migration pipeline to ingest and secure these unstructured corporate assets cleanly:
-                                </p>
-                                <ul class="space-y-3 pl-2">
-
-                                    <li class="flex items-start space-x-2">
-                                        <svg class="w-4 h-4 text-blue-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                        <span><b>Digitization Layer:</b> Transformed paper sheets into structured texts utilizing machine-managed localized OCR formatting.</span>
-                                    </li>
-                                    <li class="flex items-start space-x-2">
-                                        <svg class="w-4 h-4 text-blue-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                        <span><b>Isolated Vaulting:</b> Loaded encrypted data files into an isolated S3 storage array running unique server-side cryptographic keys.</span>
-                                    </li>
-                                    <li class="flex items-start space-x-2">
-                                        <svg class="w-4 h-4 text-blue-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                        <span><b>Semantic Context Mapping:</b> Segmented texts into vector coordinates partitioned strictly inside unique customer vector spaces.</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Side: Interface & ROI -->
-                    <div class="lg:col-span-5 space-y-6">
-
-                        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6">
-                            <h4 class="text-xs uppercase font-mono text-slate-500 tracking-wider mb-4">Sovereign RAG Search Simulation</h4>
-                            <div class="space-y-4">
-                                <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs">
-                                    <span class="text-blue-400 font-mono block mb-1">User Query:</span>
-                                    <p class="text-slate-300 font-medium">"What are the delayed delivery penalty clauses under our 2022 agreement with Supplier X?"</p>
-                                </div>
-                                <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs">
-                                    <span class="text-emerald-400 font-mono block mb-1">System Response [Private Engine]:</span>
-                                    <p class="text-slate-300 mb-2">Section 4.2 states delayed arrivals over 48 hours incur a 1.5% margin reduction per day.</p>
-                                    <a href="#" onclick="event.preventDefault();" class="text-blue-500 hover:underline font-mono text-[10px] block flex items-center space-x-1">
-                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                                        <span>Source: 2022_Sourcing_Agreement_Final.pdf (Page 14)</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700/50 rounded-2xl p-6">
-
-                            <h4 class="text-xs uppercase font-mono text-slate-400 tracking-wider mb-3">Validated Business Outcomes</h4>
-                            <div class="space-y-3">
-                                <div class="flex items-center justify-between text-sm py-1 border-b border-slate-800">
-                                    <span class="text-slate-400">Search Latency Target</span>
-                                    <span class="font-mono text-red-400">45 Min <span class="text-slate-500">→</span> <span class="text-emerald-400">&lt; 5 Sec</span></span>
-                                </div>
-                                <div class="flex items-center justify-between text-sm py-1 border-b border-slate-800">
-                                    <span class="text-slate-400">Weekly Saved Labor</span>
-                                    <span class="font-mono text-emerald-400">120 Hours</span>
-                                </div>
-                                <div class="flex items-center justify-between text-sm py-1">
-                                    <span class="text-slate-400">Third-Party Data Leaks</span>
-                                    <span class="font-mono text-emerald-400">Absolute Zero</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+        <div class="phase">
+          <div class="tag" style="color:#ea7c16">Phase 3</div>
+          <h3>Workflows & Analytics</h3><small>Future roadmap</small>
+          <ul>
+            <li>Pending / Cleared / Overdue lifecycle</li>
+            <li>Inward vs Outward classification</li>
+            <li>Ageing, trend and exception analytics</li>
+            <li>Agentic approvals and escalations</li>
+            <li>Retention and purge policies</li>
+          </ul>
         </div>
-    </section>
-
-    <!-- Stealth About Us Section -->
-    <section id="about" class="py-20 lg:py-28 bg-slate-50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white border border-slate-200/60 rounded-3xl p-10 lg:p-16 shadow-sm relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-0 opacity-60"></div>
-                <div class="relative z-10">
-                    <span class="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-3">Our Core Philosophy</span>
-                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-6 sm:text-4xl">
-                        About Anshvith Ventures
-                    </h2>
-                    <p class="text-slate-600 text-base leading-relaxed mb-6">
-                        We operate as a specialized engineering group dedicated entirely to building secure, autonomous AI foundations for corporate entities. While public platforms offer great agility, enterprise deployments demand complete protection over structural assets, strict local storage alignment, and absolute control of data pipelines.
-                    </p>
-                    <p class="text-slate-600 text-base leading-relaxed mb-8">
-                        Our primary commitment is infrastructure excellence. Rather than packaging generalized wrappers, we build direct plumbing architecture that safely encapsulates complex open-source infrastructure inside your secure borders. We prioritize system metrics, absolute data isolation, and verified code security above marketing amplification.
-                    </p>
-
-
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-100 text-center sm:text-left">
-                        <div>
-                            <div class="text-2xl font-bold text-slate-900">100%</div>
-                            <div class="text-xs text-slate-500 uppercase font-semibold mt-1 tracking-wider">Data Control Retention</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl font-bold text-slate-900">Zero</div>
-                            <div class="text-xs text-slate-500 uppercase font-semibold mt-1 tracking-wider">External API Vendor Reliance</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl font-bold text-slate-900">Custom Built</div>
-                            <div class="text-xs text-slate-500 uppercase font-semibold mt-1 tracking-wider">Local Vector Isolation</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="phase">
+          <div class="tag" style="color:#7c3aed">Phase 4</div>
+          <h3>Enterprise Connect</h3><small>Future roadmap</small>
+          <ul>
+            <li>ERP / accounting integration</li>
+            <li>APIs and webhooks</li>
+            <li>Multi-entity / multi-company support</li>
+            <li>Advanced business intelligence</li>
+            <li>Enterprise deployment options</li>
+          </ul>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-
-    <!-- Secure Inquiries Intake -->
-    <section id="contact" class="py-20 lg:py-24 bg-white border-t border-slate-100">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-slate-900 tracking-tight sm:text-4xl mb-3">
-                    Initiate Technical Engagement
-                </h2>
-                <p class="text-base text-slate-600 max-w-xl mx-auto mb-4">
-                    Submit your enterprise specifications to evaluate feasibility. All incoming inquiries are routed directly over encrypted communication channels.
-                </p>
-                <div class="inline-flex items-center space-x-2 bg-slate-100 px-4 py-2 rounded-full border border-slate-200">
-                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L22 8m-2 11H4a2 2 0 01-2-2V8a2 2 0 012-2h16a2 2 0 012 2v9a2 2 0 01-2 2z"></path></svg>
-                    <a href="mailto:info@anshvithventures.com" class="text-sm font-mono text-blue-600 hover:underline">info@anshvithventures.com</a>
-                </div>
-            </div>
-
-            <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-8 sm:p-12 shadow-sm">
-                <form onsubmit="event.preventDefault(); alert('Transmission simulated successfully. Your configuration has been validated internally.');" class="space-y-6">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Corporate Entity</label>
-                            <input type="text" required placeholder="e.g., Global Logistics Corp" class="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Primary Infrastructure Engine</label>
-                            <select class="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                                <option>Amazon Web Services (AWS S3 / VPC)</option>
-                                <option>Google Cloud Platform (GCS)</option>
-                                <option>Microsoft Azure Cloud</option>
-                                <option>On-Premises Dedicated Arrays</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Target Data Context Profile</label>
-                        <textarea rows="4" required placeholder="Describe target data systems, document counts, and compliance expectations (e.g., Unstructured PDF volumes, localized codebases, fine-tuning configurations)." class="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"></textarea>
-                    </div>
-                    <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 pt-2">
-
-                        <span class="text-xs text-slate-400 font-mono">Endpoint Security: Layered Transport Layer Encryption</span>
-                        <button type="submit" class="px-6 py-3 bg-slate-900 text-white hover:bg-slate-800 text-sm font-semibold rounded-lg shadow transition-all transform hover:-translate-y-0.5 w-full sm:w-auto">
-                            Submit Architecture Parameters
-                        </button>
-                    </div>
-                </form>
-            </div>
+  <section>
+    <div class="wrap benefits-grid">
+      <div class="benefit-card">
+        <h2 style="margin-top:0;color:var(--navy)">Designed for Modern Finance Operations</h2>
+        <div class="benefit-list">
+          <div class="benefit"><span class="check">●</span><span>Reduce repetitive invoice lookup effort</span></div>
+          <div class="benefit"><span class="check">●</span><span>Improve visibility across invoice records</span></div>
+          <div class="benefit"><span class="check">●</span><span>Prepare for faster invoice lifecycle handling</span></div>
+          <div class="benefit"><span class="check">●</span><span>Support data-driven finance decisions</span></div>
+          <div class="benefit"><span class="check">●</span><span>Enable role-based enterprise access</span></div>
+          <div class="benefit"><span class="check">●</span><span>Build toward ERP and accounting integration</span></div>
         </div>
-    </section>
+      </div>
+      <div class="amount-card">
+        <h3>All Example Amounts in Lakhs (₹)</h3>
+        <div class="amount">₹ 324.28 L</div>
+        <p style="color:var(--muted);margin-bottom:0">
+          Illustrative campaign value only. Financial values shown on this page are sample data
+          and do not represent real customer transactions.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer Block -->
-    <footer class="bg-slate-900 text-slate-400 py-12 text-sm border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
-            <p>&copy; 2026 Anshvith Ventures. Infrastructure Rights Reserved.</p>
-            <div class="flex space-x-6 text-slate-500 text-xs font-mono">
-                <span>Domain: anshvithventures.com</span>
-            </div>
-        </div>
-    </footer>
+  <section class="cta" id="contact">
+    <div class="wrap cta-grid">
+      <div>
+        <h2>Let's build intelligent finance operations together.</h2>
+        <div>Be involved in our product roadmap and help shape the future with us.</div>
+      </div>
+      <div class="contact">
+        <span>📍 Bengaluru, India</span>
+        <span>✉ info@anshvithventures.com</span>
+      </div>
+      <a class="btn btn-light" href="mailto:info@anshvithventures.com?subject=Invoice%20Intelligence%20Demo%20Request">REQUEST A DEMO</a>
+    </div>
+  </section>
+</main>
 
-
-    <!-- Mobile Navigation Toggle Script -->
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
+<footer>© 2026 Anshvith Ventures. All rights reserved. Campaign page for product demonstration and roadmap discussion.</footer>
 </body>
 </html>
-
-
