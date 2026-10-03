@@ -65,6 +65,12 @@
     }
     .hero-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:42px;align-items:start}
     h1{font-size:56px;line-height:1.05;margin:0 0 18px;letter-spacing:-1.5px}
+	<div class="teaser-video">
+  	<video width="100%" autoplay muted loop playsinline poster="images/sample-query-output.png">
+    	<source src="videos/invoice_teaser.mp4" type="video/mp4">
+    	Your browser does not support the video tag.
+  	</video>
+	</div>
     .accent{color:var(--blue)}
     .lead{font-size:21px;font-weight:800;margin:0 0 18px}
     .sub{font-size:17px;color:var(--muted);max-width:580px}
@@ -158,6 +164,9 @@
     }
   </style>
 </head>
+
+
+
 <body>
 <header>
   <div class="wrap nav">
@@ -174,6 +183,25 @@
     <a class="btn btn-primary" href="mailto:info@anshvithventures.com?subject=Invoice%20Intelligence%20Demo%20Request">REQUEST DEMO</a>
   </div>
 </header>
+
+<section id="campaign-video" style="background:linear-gradient(180deg,#f0f7ff,#ffffff);padding:60px 0;">
+  <div class="wrap">
+    <h2 class="section-title" style="color:#0d3f80;">Enterprise Invoice Intelligence — Pilot Campaign</h2>
+    <p class="section-sub">Watch our narrated demo showcasing receivables, payables, and analytics dashboards.</p>
+    <div style="text-align:center;">
+      <video width="900" controls poster="images/analytics.jpg" style="border:4px solid #2563eb;border-radius:12px;box-shadow:0 8px 25px rgba(15,23,42,.25);">
+        <source src="videos/invoice_campaign_audio.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="note">
+      This campaign video is designed for aspiring enterprises to experience pilot testing of our platform.
+    </div>
+    <div style="text-align:center;margin-top:20px;">
+      <a href="#contact" class="btn btn-primary">Request Pilot Demo</a>
+    </div>
+  </div>
+</section>
 
 <main>
   <section class="hero" id="product">
@@ -199,10 +227,9 @@
       <div>
         <div class="poc-card">
           <div class="poc-head">DEMONSTRABLE POC — INVOICE QUERIES ON LOCAL DATABASE</div>
-          <img src="sample-query-output.png" alt="Sample invoice query output from the Enterprise Assistant">
-        </div> 
+          <img src="images/sample-query-output.png" alt="Sample invoice query output from the Enterprise Assistant">
         </div>
-	        <div class="poc-card">
+	  <div class="poc-card">
           <div class="poc-head">ANALYTICS — CASH INFLOW vs OUTFLOW</div>
           <img src="images/analytics.jpg" alt="Demonstrable Inward and Outward Invoice Revenue Statistics">
         </div>
@@ -216,6 +243,8 @@
       </div>
     </div>
   </section>
+
+
 
   <section id="workflow">
     <div class="wrap">
@@ -305,8 +334,8 @@
         </div>
       </div>
       <div class="amount-card">
-        <h3>All Example Amounts in Lakhs (₹)</h3>
-        <div class="amount">₹ 324.28 L</div>
+        <h3>Overall Cash Position (₹)</h3>
+        <div class="amount">₹ XX.YY Lakhs</div>
         <p style="color:var(--muted);margin-bottom:0">
           Illustrative campaign value only. Financial values shown on this page are sample data
           and do not represent real customer transactions.
@@ -322,7 +351,7 @@
         <div>Be involved in our product roadmap and help shape the future with us.</div>
       </div>
       <div class="contact">
-        <span>📍 Bengaluru, India</span>
+        <span>📍 Anshvith Ventures LLP, Bengaluru, India</span>
         <span>✉ info@anshvithventures.com</span>
       </div>
       <a class="btn btn-light" href="mailto:info@anshvithventures.com?subject=Invoice%20Intelligence%20Demo%20Request">REQUEST A DEMO</a>
